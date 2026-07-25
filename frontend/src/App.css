@@ -1,0 +1,110 @@
+/* Container for the entire application */
+.chat-app-container {
+  display: flex;
+  flex-direction: row; /* Desktop layout: Sidebar next to Chat Area */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Sidebar for Rooms / AI Features */
+.sidebar {
+  width: 320px;
+  background-color: #f5f7fb;
+  border-right: 1px solid #e1e8ed;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main Chat Windows area */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Message history feed box */
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Scroll independently when messages fill up */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Chat Bubble Wrapper */
+.message-row {
+  display: flex;
+  width: 100%;
+}
+
+/* Align my messages to the right, others to the left */
+.message-row.me { justify-content: flex-end; }
+.message-row.others { justify-content: flex-start; }
+
+.message-bubble {
+  max-width: 70%; /* Prevents text from stretching all the way across desktop */
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.me .message-bubble {
+  background-color: #0084ff;
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.others .message-bubble {
+  background-color: #e4e6eb;
+  color: black;
+  border-bottom-left-radius: 2px;
+}
+
+/* Footer Form Area (Input + Send button) */
+.input-area {
+  padding: 15px 20px;
+  border-top: 1px solid #e1e8ed;
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccd6dd;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* ======================================================= */
+/* 📲 MOBILE RESPONSIVE MEDIA QUERY                        */
+/* ======================================================= */
+@media (max-width: 768px) {
+  .chat-app-container {
+    flex-direction: column; /* Stacks the sidebar on top of the chat view */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto; /* Shrinks to only take up required space on mobile */
+    max-height: 200px; /* Limits size so chat stays visible */
+    border-right: none;
+    border-bottom: 1px solid #e1e8ed;
+    overflow-y: auto;
+  }
+
+  .message-bubble {
+    max-width: 85%; /* Allows bubbles to take more horizontal space on narrow phone screens */
+  }
+  
+  .input-area {
+    padding: 10px; /* Saves space on smaller viewports */
+  }
+}
