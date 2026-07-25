@@ -225,3 +225,29 @@ Here is a quick breakdown of how AI tools were used to help with this project
     *   **Debugging**: Troubleshooting TypeScript compilation errors and Mongoose schema type mismatches.
 
 >>>>>>> 91fee6c3e9bd86c5b3cf2f0a2d22f03a3fc0590a
+
+----------------------------------------------------------------------------------------------------
+
+// How to Setup and Run Locally
+1. Environment Variables (backend/.env)
+Create a .env file inside the backend folder and add these values:
+
+Code snippet
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/chat-ai
+GEMINI_API_KEY=your_actual_api_key_here
+
+
+2. Steps to Start
+Open your terminal and run the backend server first:
+
+Bash/ At Terminal
+cd backend
+npm install
+npm run start
+Open a second terminal window and start the frontend UI:
+
+Bash /At Terminal
+cd frontend
+npm install
+npm run dev
