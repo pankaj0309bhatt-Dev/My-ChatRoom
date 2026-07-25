@@ -241,14 +241,13 @@ cd backend
 npm install
 (Note: If configuring from scratch, install core dependencies and modern TypeScript development tools via:)
 
-Environment Variables (backend/.env)
-Create a .env file inside the backend folder and add these values:
-
 npm install express mongoose socket.io cors dotenv axios
 npm install -D typescript tsx @types/express @types/node @types/cors
 Configure Environment Variables:
 Create a .env file inside the root of the backend/ folder:
 
+Environment Variables (backend/.env)
+Create a .env file inside the backend folder and add these values:
 
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/chat-ai
@@ -261,10 +260,11 @@ JSON
   "start": "tsx src/server.ts",
   "build": "tsc"
 }
-Start the backend server:
 
-Bash
+Start the backend server:
 npm run start
+
+
 💻 2. Frontend Setup
 Open a new, separate terminal window and run the following commands:
 
@@ -272,27 +272,8 @@ Navigate to the frontend directory:
 
 Bash
 cd frontend
-Install frontend dependencies:
-
-Bash
 npm install
-Launch the Vite development server:
-
-Bash
 npm run dev
+
 Access the Application:
 Open your browser and navigate to the local URL displayed in your terminal (typically http://localhost:5173).
-
-
-
-
-
-
-
-
-
-
-Bash /At Terminal
-cd frontend
-npm install
-npm run dev
