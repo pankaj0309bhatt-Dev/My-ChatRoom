@@ -229,23 +229,68 @@ Here is a quick breakdown of how AI tools were used to help with this project
 ----------------------------------------------------------------------------------------------------
 
 // How to Setup and Run Locally
-1. Environment Variables (backend/.env)
-Create a .env file inside the backend folder and add these values:
+//Getting Started & Installation
+📋 Prerequisites
+Ensure you have Node.js (v18+) and MongoDB installed and running locally on your machine on the default port (27017).
 
-Code snippet
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/chat-ai
-GEMINI_API_KEY=your_actual_api_key_here
+🗄️ 1. Backend Setup
+Navigate to the backend directory and install dependencies:
 
-
-2. Steps to Start
-Open your terminal and run the backend server first:
-
-Bash/ At Terminal
+Bash
 cd backend
 npm install
+(Note: If configuring from scratch, install core dependencies and modern TypeScript development tools via:)
+
+Environment Variables (backend/.env)
+Create a .env file inside the backend folder and add these values:
+
+npm install express mongoose socket.io cors dotenv axios
+npm install -D typescript tsx @types/express @types/node @types/cors
+Configure Environment Variables:
+Create a .env file inside the root of the backend/ folder:
+
+
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/chat-ai
+GEMINI_API_KEY=your_gemini_api_key_here
+Verify package.json Scripts:
+Ensure your backend/package.json contains the tsx run script so it bypasses traditional environment compilation bugs:
+
+JSON
+"scripts": {
+  "start": "tsx src/server.ts",
+  "build": "tsc"
+}
+Start the backend server:
+
+Bash
 npm run start
-Open a second terminal window and start the frontend UI:
+💻 2. Frontend Setup
+Open a new, separate terminal window and run the following commands:
+
+Navigate to the frontend directory:
+
+Bash
+cd frontend
+Install frontend dependencies:
+
+Bash
+npm install
+Launch the Vite development server:
+
+Bash
+npm run dev
+Access the Application:
+Open your browser and navigate to the local URL displayed in your terminal (typically http://localhost:5173).
+
+
+
+
+
+
+
+
+
 
 Bash /At Terminal
 cd frontend
